@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainDisplayPage"></activity>
+        <activity android:name=".leagueHome"></activity>
+        <activity android:name=".teamHome" />
+        <activity android:name=".leagueLogin" />
+        <activity android:name=".teamLogin" />
+        <activity android:name=".MainDisplayPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

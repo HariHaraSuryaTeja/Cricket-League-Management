@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
+import android.app.Fragment;
 public class MainActivity extends AppCompatActivity {
 private static int time_out=3000;
     @Override

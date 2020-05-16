@@ -13,7 +13,7 @@
         tools:layout_editor_absoluteY="1dp">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/league"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_account_circle_black_24dp"
@@ -21,26 +21,12 @@
             android:text="League Manager" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/team"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_account_circle_black_24dp"
             android:drawableRight="@drawable/ic_chevron_right_black_24dp"
             android:text="Team Manager" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:drawableRight="@drawable/ic_chevron_right_black_24dp"/>
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:drawableRight="@drawable/ic_chevron_right_black_24dp"/>
 
 
     </LinearLayout>
