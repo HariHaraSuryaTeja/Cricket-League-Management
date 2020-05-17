@@ -35,6 +35,7 @@
         android:id="@+id/leaguelogin"
         android:layout_width="91dp"
         android:layout_height="46dp"
+        android:background="@drawable/greenbtn"
         android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
