@@ -15,7 +15,7 @@ private static int time_out=3000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i= new Intent(MainActivity.this, MainDisplayPage.class);
+                Intent i= new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(i);
             }
         },time_out);

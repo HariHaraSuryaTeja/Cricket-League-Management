@@ -25,9 +25,7 @@ public class MainDisplayPage extends AppCompatActivity {
                     Fragment selectedFragment =null;
 
                     switch (item.getItemId()){
-                        case R.id.nav_account:
-                            selectedFragment = new AccountFragment();
-                            break;
+
                         case R.id.nav_home:
                             selectedFragment = new HomeFragment();
                             break;
