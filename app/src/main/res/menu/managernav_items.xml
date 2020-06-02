@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mannav_home"
+        android:icon="@drawable/baseline_home_black_24dp"
+        android:title="Home" />
+    <item
+        android:id="@+id/mannav_manage"
+        android:icon="@drawable/ic_verified_user_black_24dp"
+        android:title="Manage" />
+</menu>

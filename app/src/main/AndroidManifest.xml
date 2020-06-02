@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ManagerDisplayPage"></activity>
         <activity android:name=".StaffDisplayPage" />
         <activity android:name=".OTPSent" />
         <activity android:name=".emailOTP" />
