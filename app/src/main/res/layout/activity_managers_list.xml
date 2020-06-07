@@ -10,11 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>
-<Button
-    android:id="@+id/btnAddTeam"
-    android:text="Add Team"
-    android:layout_weight="0"
-    android:background="#fcdb00"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnAddManger"
+        android:text="Add Manager"
+        android:layout_weight="0"
+        android:background="#fcdb00"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

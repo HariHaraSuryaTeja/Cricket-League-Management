@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.cricketleague.R;
-import com.example.cricketleague.adapters.HomeScreenAdapter;
+import com.example.cricketleague.adapters.TeamsAdapter;
 import com.example.cricketleague.api.ApiService;
 import com.example.cricketleague.api.RetroClient;
 import com.example.cricketleague.models.TeamModel;
@@ -30,7 +30,6 @@ public class TeamsFragment extends Fragment {
     ProgressDialog progressDialog;
     List<TeamModel> al;
     View view;
-
     public static TeamsFragment getTeamsFragment() {
         TeamsFragment fragment = new TeamsFragment();
         return fragment;
@@ -50,11 +49,11 @@ public class TeamsFragment extends Fragment {
                 getActivity().finish();
             }
         });
-        loadAllCategories();
+        loadAllTeams();
         return view;
     }
     ProgressDialog pd;
-    private void loadAllCategories(){
+    private void loadAllTeams(){
         pd = new ProgressDialog(getActivity());
         pd.setTitle("Please wait,Data is being loaded.");
         pd.show();
@@ -65,12 +64,10 @@ public class TeamsFragment extends Fragment {
             public void onResponse(Call<List<TeamModel>> call, Response<List<TeamModel>> response) {
                 pd.dismiss();
                 if (response.isSuccessful()) {
-
                     List<TeamModel> teams=response.body();
-                    list_view.setAdapter(new HomeScreenAdapter(teams,getActivity()));
+                    list_view.setAdapter(new TeamsAdapter(teams,getActivity()));
                 }
             }
-
             @Override
             public void onFailure(Call<List<TeamModel>> call, Throwable t) {
                 pd.dismiss();

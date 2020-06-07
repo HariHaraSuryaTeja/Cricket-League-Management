@@ -65,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent contact = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(contact);
                 return true;
+            case R.id.item_add_manager:
+                Intent managers = new Intent(getApplicationContext(), ManagerListActivity.class);
+                startActivity(managers);
+                return true;
+
             case R.id.item_logout:
                 Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(myIntent);

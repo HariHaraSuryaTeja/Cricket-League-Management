@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_8sdp"
+    android:layout_height="match_parent">
+    <TextView
+        android:padding="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:text="Team Name"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:id="@+id/spTeamName"
+        android:background="@drawable/et_box"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:padding="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:text="Manager Name"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/etManagerName"
+        android:background="@drawable/et_box"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:padding="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:text="Mobile No"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/etPhno"
+        android:inputType="phone"
+        android:background="@drawable/et_box"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:padding="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:text="Email ID"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/etEmailID"
+        android:background="@drawable/et_box"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:id="@+id/btnAddManger"
+        android:layout_margin="@dimen/_8sdp"
+        android:text="Add Manager"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

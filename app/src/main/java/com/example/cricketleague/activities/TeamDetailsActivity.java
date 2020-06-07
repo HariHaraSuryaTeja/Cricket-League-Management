@@ -3,10 +3,8 @@ package com.example.cricketleague.activities;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.cricketleague.R;
 
 public class TeamDetailsActivity extends AppCompatActivity {
@@ -20,7 +18,6 @@ public class TeamDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Team Details");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         tv_team_name=(TextView)findViewById(R.id.tv_team_name);
         tv_team_name.setText(getIntent().getStringExtra("team_name"));
 

@@ -19,11 +19,35 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_edit"
+                    android:textSize="14sp"
+                    android:padding="16dp"
+                    android:background="@drawable/ic_edit"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="#F44336"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp" />
+                <TextView
+                    android:id="@+id/tv_delete"
+                    android:textSize="14sp"
+                    android:padding="16dp"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:background="@drawable/ic_delete"
+                    android:layout_toLeftOf="@+id/tv_edit"
+                    android:text=""
+                    android:textColor="#F44336"
+                    android:layout_centerVertical="true"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp" />
             <TextView
                 android:id="@+id/tv_team_name"
                 android:drawablePadding="4dp"
                 android:textSize="18dp"
-                android:padding="13dp"
+                android:padding="8dp"
+                android:layout_toLeftOf="@+id/tv_delete"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
