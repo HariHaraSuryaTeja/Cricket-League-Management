@@ -3,6 +3,7 @@ package com.example.cricketleague.api;
 
 
 import com.example.cricketleague.models.ManagerModel;
+import com.example.cricketleague.models.PlayerModel;
 import com.example.cricketleague.models.ResModel;
 import com.example.cricketleague.models.TeamModel;
 
@@ -25,6 +26,13 @@ public interface ApiService {
 
     @GET("CPL/addManager.php")
     Call<ResModel> addManager(@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
+
+
+    @GET("CPL/addPlayer.php")
+    Call<ResModel> addPlayer(@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
+
+    @GET("CPL/getPlayers.php")
+    Call<List<PlayerModel>> getAllPlayers();
 
     @GET("CPL/editManager.php")
     Call<ResModel> editManager(@Query("id") String id,@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
