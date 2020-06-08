@@ -27,7 +27,7 @@
         <activity android:name=".activities.ManagerListActivity"></activity>
         <activity android:name=".activities.AddManagerActivity"></activity>
         <activity android:name=".activities.EditManagerActivity"></activity>
-
+        <activity android:name=".activities.EditPlayerActivity"></activity>
 
 
 

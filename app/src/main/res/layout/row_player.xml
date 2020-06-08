@@ -37,6 +37,7 @@
                 android:layout_marginRight="@dimen/_16sdp"
                 android:background="@drawable/ic_delete"
                 android:layout_toLeftOf="@+id/tv_edit"
+                android:visibility="gone"
                 android:text=""
                 android:textColor="#F44336"
                 android:layout_centerVertical="true"

@@ -47,5 +47,8 @@ public interface ApiService {
     @GET("CPL/getManagers.php")
     Call<List<ManagerModel>> getAllMangers();
 
+    @GET("CPL/editPlayer.php")
+    Call<ResModel> editPlayer(@Query("id") String id,@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
+
 
 }
