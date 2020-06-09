@@ -7,18 +7,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.cricketleague.R;
 import com.example.cricketleague.adapters.ManagersAdapter;
 import com.example.cricketleague.api.ApiService;
 import com.example.cricketleague.api.RetroClient;
 import com.example.cricketleague.models.ManagerModel;
 import com.example.cricketleague.models.TeamModel;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

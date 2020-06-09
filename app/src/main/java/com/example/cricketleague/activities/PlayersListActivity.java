@@ -11,10 +11,13 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cricketleague.R;
+import com.example.cricketleague.adapters.ManagersAdapter;
 import com.example.cricketleague.adapters.PlayersAdapter;
 import com.example.cricketleague.api.ApiService;
 import com.example.cricketleague.api.RetroClient;
+import com.example.cricketleague.models.ManagerModel;
 import com.example.cricketleague.models.PlayerModel;
+import com.example.cricketleague.models.TeamModel;
 
 import java.util.List;
 
@@ -36,7 +39,7 @@ public class PlayersListActivity extends AppCompatActivity {
         btnAddPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PlayersListActivity.this, AddPlayerActivity.class));
+                startActivity(new Intent(PlayersListActivity.this,AddPlayerActivity.class));
                 finish();
             }
         });
@@ -71,7 +74,7 @@ public class PlayersListActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     List<PlayerModel> players=response.body();
                     //Toast.makeText(ManagerListActivity.this,""+managers.size(),Toast.LENGTH_SHORT).show();
-                    list_view.setAdapter(new PlayersAdapter(players, PlayersListActivity.this));
+                    list_view.setAdapter(new PlayersAdapter(players,PlayersListActivity.this));
                 }
             }
             @Override

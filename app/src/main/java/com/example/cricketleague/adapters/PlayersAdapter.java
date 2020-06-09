@@ -9,20 +9,17 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.cardview.widget.CardView;
-
 import com.example.cricketleague.R;
-//import com.example.cricketleague.activities.EditPlayerActivity;
+import com.example.cricketleague.activities.EditManagerActivity;
 import com.example.cricketleague.activities.EditPlayerActivity;
 import com.example.cricketleague.activities.TeamDetailsActivity;
 import com.example.cricketleague.api.ApiService;
 import com.example.cricketleague.api.RetroClient;
+import com.example.cricketleague.models.ManagerModel;
 import com.example.cricketleague.models.PlayerModel;
 import com.example.cricketleague.models.ResModel;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -59,6 +56,15 @@ public class PlayersAdapter extends BaseAdapter {
         TextView tv_player=(TextView)obj2.findViewById(R.id.tv_player);
         tv_player.setText(ar.get(pos).getName());
 
+        TextView tv_delete=(TextView)obj2.findViewById(R.id.tv_delete);
+        tv_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deletePlayer(ar.get(pos).getId(),pos);
+
+            }
+        });
+
         TextView tv_edit=(TextView)obj2.findViewById(R.id.tv_edit);
         tv_edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +80,8 @@ public class PlayersAdapter extends BaseAdapter {
             }
         });
 
+
+
         CardView cv_team_name=(CardView)obj2.findViewById(R.id.cv_team_name);
         cv_team_name.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,4 +94,32 @@ public class PlayersAdapter extends BaseAdapter {
 
         return obj2;
     }
+
+    ProgressDialog pd;
+    private void deletePlayer(String id,final int pos1){
+        pd = new ProgressDialog(cnt);
+        pd.setTitle("Please wait,Data is being loaded.");
+        pd.show();
+        ApiService api = RetroClient.getApiService();
+        Call<ResModel> call = api.deletePlayer(id);
+        call.enqueue(new Callback<ResModel>() {
+            @Override
+            public void onResponse(Call<ResModel> call, Response<ResModel> response) {
+                pd.dismiss();
+                if (response.isSuccessful()) {
+                    Toast.makeText(cnt,response.body().getMessage(),Toast.LENGTH_SHORT).show();
+                    ar.remove(pos1);
+                    notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResModel> call, Throwable t) {
+                pd.dismiss();
+            }
+        });
+    }
+
+
+
 }

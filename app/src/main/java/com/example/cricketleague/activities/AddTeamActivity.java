@@ -20,7 +20,6 @@ import retrofit2.Response;
 
 public class AddTeamActivity  extends AppCompatActivity {
     EditText etTeam;
-
     Button btnAddTeam;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class AddTeamActivity  extends AppCompatActivity {
         btnAddTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addTeam();
+addTeam();
             }
         });
     }

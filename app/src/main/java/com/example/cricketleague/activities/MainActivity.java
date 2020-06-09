@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent managers = new Intent(getApplicationContext(), ManagerListActivity.class);
                 startActivity(managers);
                 return true;
+
             case R.id.item_add_player:
                 Intent players = new Intent(getApplicationContext(), PlayersListActivity.class);
                 startActivity(players);

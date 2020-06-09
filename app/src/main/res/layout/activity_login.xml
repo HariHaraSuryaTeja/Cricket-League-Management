@@ -56,7 +56,6 @@
             <EditText
                 android:id="@+id/et_pwd"
                 android:hint="Password"
-                android:inputType="textPassword"
                 android:padding="@dimen/_9sdp"
                 android:background="@drawable/edittext_rounded_login"
                 android:layout_marginLeft="@dimen/_10sdp"

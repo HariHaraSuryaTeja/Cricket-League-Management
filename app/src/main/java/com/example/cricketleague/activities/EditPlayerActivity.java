@@ -26,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EditPlayerActivity extends AppCompatActivity {
+public class EditPlayerActivity  extends AppCompatActivity {
     EditText etPlayerName,etPhno,etEmailID;
     Button btnAddPlayer;
     @Override
@@ -67,11 +67,11 @@ public class EditPlayerActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     ResModel rm=response.body();
                     if(rm.getStatus().equals("true")){
-                        Toast.makeText(EditPlayerActivity.this,rm.getMessage(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), PlayersListActivity.class));
+                        Toast.makeText(EditPlayerActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),PlayersListActivity.class));
                         finish();
                     }else{
-                        Toast.makeText(EditPlayerActivity.this,rm.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditPlayerActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -116,7 +116,7 @@ public class EditPlayerActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 this.finish();
                 return true;
             default:

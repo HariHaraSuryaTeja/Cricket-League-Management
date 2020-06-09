@@ -1,14 +1,10 @@
 package com.example.cricketleague.api;
 
-
-
 import com.example.cricketleague.models.ManagerModel;
 import com.example.cricketleague.models.PlayerModel;
 import com.example.cricketleague.models.ResModel;
 import com.example.cricketleague.models.TeamModel;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -27,12 +23,9 @@ public interface ApiService {
     @GET("CPL/addManager.php")
     Call<ResModel> addManager(@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
 
-
     @GET("CPL/addPlayer.php")
     Call<ResModel> addPlayer(@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
 
-    @GET("CPL/getPlayers.php")
-    Call<List<PlayerModel>> getAllPlayers();
 
     @GET("CPL/editManager.php")
     Call<ResModel> editManager(@Query("id") String id,@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
@@ -47,8 +40,13 @@ public interface ApiService {
     @GET("CPL/getManagers.php")
     Call<List<ManagerModel>> getAllMangers();
 
+    @GET("CPL/getPlayers.php")
+    Call<List<PlayerModel>> getAllPlayers();
+
     @GET("CPL/editPlayer.php")
     Call<ResModel> editPlayer(@Query("id") String id,@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
 
+    @GET("CPL/deletePlayer.php")
+    Call<ResModel> deletePlayer(@Query("id") String id);
 
 }
