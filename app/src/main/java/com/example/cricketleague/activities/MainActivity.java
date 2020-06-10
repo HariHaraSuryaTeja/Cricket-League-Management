@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent players = new Intent(getApplicationContext(), PlayersListActivity.class);
                 startActivity(players);
                 return true;
+            case R.id.item_add_schedule:
+                Intent schedule = new Intent(getApplicationContext(), AddScheduleActivity.class);
+                startActivity(schedule);
+                return true;
 
             case R.id.item_logout:
                 Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
