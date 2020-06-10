@@ -62,6 +62,7 @@ public class TeamsAdapter extends BaseAdapter {
         tv_team_name.setText(ar.get(pos).getTeam_name());
 
         TextView tv_delete=(TextView)obj2.findViewById(R.id.tv_delete);
+        tv_delete.setVisibility(View.GONE);
         tv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +72,7 @@ public class TeamsAdapter extends BaseAdapter {
         });
 
         TextView tv_edit=(TextView)obj2.findViewById(R.id.tv_edit);
+        tv_edit.setVisibility(View.GONE);
         tv_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

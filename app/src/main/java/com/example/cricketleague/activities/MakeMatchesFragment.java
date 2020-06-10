@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.cricketleague.R;
 
-public class MakeMatchesFragment  extends Fragment {
+public class MakeMatchesFragment extends Fragment {
     View view;
     public static MakeMatchesFragment getMakeMatchesFragment() {
         MakeMatchesFragment fragment = new MakeMatchesFragment();

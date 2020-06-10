@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                                 selectedFragment = TeamsFragment.getTeamsFragment();
                                 break;
                             case R.id.action_item2:
-                                selectedFragment = AddPlayerAndManagerFragment.getPlayerManagerFragment();
+                                selectedFragment = AddPlayerAndManagerFragment.getTeamsFragment();
                                 break;
                             case R.id.action_item3:
                                 selectedFragment = MakeMatchesFragment.getMakeMatchesFragment();
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent players = new Intent(getApplicationContext(), PlayersListActivity.class);
                 startActivity(players);
                 return true;
+
             case R.id.item_logout:
                 Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(myIntent);

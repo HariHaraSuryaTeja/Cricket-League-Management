@@ -69,7 +69,9 @@ public class EditManagerActivity  extends AppCompatActivity {
                     ResModel rm=response.body();
                     if(rm.getStatus().equals("true")){
                         Toast.makeText(EditManagerActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),ManagerListActivity.class));
+                        Intent intent=new Intent(getApplicationContext(),TeamDetails1Activity.class);
+                        intent.putExtra("team_name",getIntent().getStringExtra("team"));
+                        startActivity(intent);
                         finish();
                     }else{
                         Toast.makeText(EditManagerActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
@@ -117,7 +119,9 @@ public class EditManagerActivity  extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                Intent intent=new Intent(getApplicationContext(),TeamDetails1Activity.class);
+                intent.putExtra("team_name",getIntent().getStringExtra("team"));
+                startActivity(intent);
                 this.finish();
                 return true;
             default:

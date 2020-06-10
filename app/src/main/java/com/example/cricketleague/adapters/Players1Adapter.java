@@ -9,26 +9,28 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.cardview.widget.CardView;
+
 import com.example.cricketleague.R;
-import com.example.cricketleague.activities.EditManagerActivity;
 import com.example.cricketleague.activities.EditPlayerActivity;
-import com.example.cricketleague.activities.TeamDetails1Activity;
 import com.example.cricketleague.activities.TeamDetailsActivity;
 import com.example.cricketleague.api.ApiService;
 import com.example.cricketleague.api.RetroClient;
-import com.example.cricketleague.models.ManagerModel;
 import com.example.cricketleague.models.PlayerModel;
 import com.example.cricketleague.models.ResModel;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PlayersAdapter extends BaseAdapter {
+
+public class Players1Adapter extends BaseAdapter {
     List<PlayerModel> ar;
     Context cnt;
-    public PlayersAdapter(List<PlayerModel> ar, Context cnt)
+    public Players1Adapter(List<PlayerModel> ar, Context cnt)
     {
         this.ar=ar;
         this.cnt=cnt;
@@ -58,6 +60,7 @@ public class PlayersAdapter extends BaseAdapter {
         tv_player.setText(ar.get(pos).getName());
 
         TextView tv_delete=(TextView)obj2.findViewById(R.id.tv_delete);
+        tv_delete.setVisibility(View.GONE);
         tv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +70,7 @@ public class PlayersAdapter extends BaseAdapter {
         });
 
         TextView tv_edit=(TextView)obj2.findViewById(R.id.tv_edit);
+        tv_edit.setVisibility(View.GONE);
         tv_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,8 +82,6 @@ public class PlayersAdapter extends BaseAdapter {
                 intent.putExtra("email",ar.get(pos).getEmail());
                 intent.putExtra("team",ar.get(pos).getTeam());
                 cnt.startActivity(intent);
-                ((TeamDetails1Activity)cnt).finish();
-
             }
         });
 

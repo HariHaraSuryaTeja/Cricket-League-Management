@@ -7,7 +7,7 @@
     <item
         android:id="@+id/action_item2"
         android:icon="@drawable/ic_add_player"
-        android:title="Add Player"/>
+        android:title="Manage"/>
     <item
         android:id="@+id/action_item3"
         android:icon="@drawable/ic_add_matches"

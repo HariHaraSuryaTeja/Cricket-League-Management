@@ -18,10 +18,8 @@ import com.example.cricketleague.api.ApiService;
 import com.example.cricketleague.api.RetroClient;
 import com.example.cricketleague.models.ResModel;
 import com.example.cricketleague.models.TeamModel;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

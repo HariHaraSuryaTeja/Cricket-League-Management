@@ -42,6 +42,7 @@ public class TeamsFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_teams, container, false);
         list_view=(ListView)view.findViewById(R.id.list_view);
         Button btnAddTeam=(Button) view.findViewById(R.id.btnAddTeam);
+        btnAddTeam.setVisibility(View.GONE);
         btnAddTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

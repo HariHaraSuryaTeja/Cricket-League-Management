@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -13,7 +14,8 @@ import com.example.cricketleague.R;
 
 
 public class LoginActivity extends AppCompatActivity {
-    Button bt_signup,bt_signin;
+    Button bt_signin;
+    TextView bt_signup;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        bt_signup=(Button)findViewById(R.id.bt_signup);
+        bt_signup=(TextView)findViewById(R.id.bt_signup);
         bt_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

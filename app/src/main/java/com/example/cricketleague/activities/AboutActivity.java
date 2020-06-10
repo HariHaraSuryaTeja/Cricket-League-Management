@@ -2,9 +2,7 @@ package com.example.cricketleague.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.cricketleague.R;
 
 public class AboutActivity  extends AppCompatActivity {

@@ -43,10 +43,19 @@ public interface ApiService {
     @GET("CPL/getPlayers.php")
     Call<List<PlayerModel>> getAllPlayers();
 
+    @GET("CPL/getPlayersByTeam.php")
+    Call<List<PlayerModel>> getPlayersByTeam(@Query("team") String team);
+
     @GET("CPL/editPlayer.php")
     Call<ResModel> editPlayer(@Query("id") String id,@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
 
     @GET("CPL/deletePlayer.php")
     Call<ResModel> deletePlayer(@Query("id") String id);
+
+    @GET("CPL/addSchedule.php")
+    Call<ResModel> addSchedule(@Query("team1") String team1,@Query("team2") String team2,@Query("schedule_date") String sdate);
+
+    @GET("CPL/getManagerByTeam.php")
+    Call<List<ManagerModel>> getManagerByTeam(@Query("team") String team1);
 
 }
