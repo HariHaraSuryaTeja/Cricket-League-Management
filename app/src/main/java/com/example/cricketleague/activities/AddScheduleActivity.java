@@ -1,5 +1,6 @@
 package com.example.cricketleague.activities;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import com.example.cricketleague.models.ResModel;
 import com.example.cricketleague.models.TeamModel;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import retrofit2.Call;
@@ -29,6 +32,7 @@ import retrofit2.Response;
 public class AddScheduleActivity  extends AppCompatActivity {
     EditText etSDate;
     Button btnAddSchedule;
+    private int mYear, mMonth, mDay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,15 +40,47 @@ public class AddScheduleActivity  extends AppCompatActivity {
         getSupportActionBar().setTitle("Add Schedule");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+         Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
         etSDate =(EditText)findViewById(R.id.etSDate);
+        etSDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setDate();
+                //Toast.makeText(AddScheduleActivity.this,"Date",Toast.LENGTH_SHORT).show();
+            }
+        });
         btnAddSchedule =(Button) findViewById(R.id.btnAddSchedule);
         btnAddSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSchedule();
+                if(spTeamName1.getSelectedItem().toString().equals(spTeamName2.getSelectedItem().toString())){
+                    Toast.makeText(AddScheduleActivity.this,"Both teams are same.",Toast.LENGTH_SHORT).show();
+                }else{
+                    addSchedule();
+                }
+
             }
         });
         loadAllTeams();
+    }
+    String mdate="";
+    private void setDate(){
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+
+                        etSDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        mdate=year+"-"+ (monthOfYear + 1)+"-"+dayOfMonth;
+
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
     }
 
     ProgressDialog pd;
@@ -53,7 +89,7 @@ public class AddScheduleActivity  extends AppCompatActivity {
         pd.setTitle("Please wait,Data is being submitted.");
         pd.show();
         ApiService api = RetroClient.getApiService();
-        Call<ResModel> call = api.addSchedule(spTeamName1.getSelectedItem().toString(),spTeamName2.getSelectedItem().toString(),etSDate.getText().toString());
+        Call<ResModel> call = api.addSchedule(spTeamName1.getSelectedItem().toString(),spTeamName2.getSelectedItem().toString(),mdate);
         call.enqueue(new Callback<ResModel>() {
             @Override
             public void onResponse(Call<ResModel> call, Response<ResModel> response) {
@@ -62,7 +98,6 @@ public class AddScheduleActivity  extends AppCompatActivity {
                     ResModel rm=response.body();
                     if(rm.getStatus().equals("true")){
                         Toast.makeText(AddScheduleActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),ManagerListActivity.class));
                         finish();
                     }else{
                         Toast.makeText(AddScheduleActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
@@ -112,7 +147,6 @@ public class AddScheduleActivity  extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 this.finish();
                 return true;
             default:

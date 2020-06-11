@@ -3,6 +3,7 @@ package com.example.cricketleague.api;
 import com.example.cricketleague.models.ManagerModel;
 import com.example.cricketleague.models.PlayerModel;
 import com.example.cricketleague.models.ResModel;
+import com.example.cricketleague.models.ScheduleModel;
 import com.example.cricketleague.models.TeamModel;
 import java.util.List;
 import retrofit2.Call;
@@ -57,5 +58,8 @@ public interface ApiService {
 
     @GET("CPL/getManagerByTeam.php")
     Call<List<ManagerModel>> getManagerByTeam(@Query("team") String team1);
+
+    @GET("CPL/getSchedule.php")
+    Call<List<ScheduleModel>> getSchedule();
 
 }

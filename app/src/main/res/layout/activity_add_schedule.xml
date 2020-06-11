@@ -36,7 +36,8 @@
     <EditText
         android:layout_width="match_parent"
         android:id="@+id/etSDate"
-        android:hint="Schedule Date"
+        android:focusable="false"
+        android:hint="Select Schedule Date"
         android:background="@drawable/et_box"
         android:padding="@dimen/_5sdp"
         android:layout_height="wrap_content"/>
