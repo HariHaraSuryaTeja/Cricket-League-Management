@@ -2,6 +2,7 @@ package com.example.cricketleague.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,7 @@ public class AddPlayerAndManagerFragment extends Fragment {
     ListView list_view;
     ProgressDialog progressDialog;
     List<TeamModel> al;
+    SharedPreferences pref;
     View view;
     public static AddPlayerAndManagerFragment getTeamsFragment() {
         AddPlayerAndManagerFragment fragment = new AddPlayerAndManagerFragment();
@@ -42,7 +44,11 @@ public class AddPlayerAndManagerFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.fragment_teams, container, false);
         list_view=(ListView)view.findViewById(R.id.list_view);
+        pref = getActivity().getSharedPreferences("cpl", 0);
         Button btnAddTeam=(Button) view.findViewById(R.id.btnAddTeam);
+        if(!pref.getString("team_access","").equals("all")){
+            btnAddTeam.setVisibility(View.GONE);
+        }
         btnAddTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_item1"
+        android:icon="@drawable/ic_teams"
+        android:title="Home"/>
+    <item
+        android:id="@+id/action_item2"
+        android:icon="@drawable/ic_add_player"
+        android:title="Manage"/>
+    <item
+        android:id="@+id/action_item3"
+        android:visible="false"
+        android:icon="@drawable/ic_add_matches"
+        android:title="Make Matchs"/>
+
+</menu>

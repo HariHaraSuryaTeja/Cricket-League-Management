@@ -3,6 +3,7 @@ package com.example.cricketleague.adapters;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,10 +29,14 @@ import retrofit2.Response;
 public class PlayersAdapter extends BaseAdapter {
     List<PlayerModel> ar;
     Context cnt;
-    public PlayersAdapter(List<PlayerModel> ar, Context cnt)
+    SharedPreferences pref;
+    String team;
+    public PlayersAdapter(String team,List<PlayerModel> ar, Context cnt)
     {
         this.ar=ar;
         this.cnt=cnt;
+        this.team=team;
+        pref = cnt.getSharedPreferences("cpl", 0);
     }
     @Override
     public int getCount() {
@@ -57,16 +62,29 @@ public class PlayersAdapter extends BaseAdapter {
         TextView tv_player=(TextView)obj2.findViewById(R.id.tv_player);
         tv_player.setText(ar.get(pos).getName());
 
+        TextView tv_edit=(TextView)obj2.findViewById(R.id.tv_edit);
+
         TextView tv_delete=(TextView)obj2.findViewById(R.id.tv_delete);
+        if(!pref.getString("team_access","-").equals("all")){
+            if(pref.getString("team_access","-").equals(team)){
+                tv_delete.setVisibility(View.VISIBLE);
+                tv_edit.setVisibility(View.VISIBLE);
+            }else{
+                tv_delete.setVisibility(View.GONE);
+                tv_edit.setVisibility(View.GONE);
+            }
+        }else{
+            tv_delete.setVisibility(View.VISIBLE);
+            tv_edit.setVisibility(View.VISIBLE);
+        }
         tv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 deletePlayer(ar.get(pos).getId(),pos);
-
             }
         });
+        //Toast.makeText(cnt,""+pref.getString("team_access","-"),Toast.LENGTH_SHORT).show();
 
-        TextView tv_edit=(TextView)obj2.findViewById(R.id.tv_edit);
         tv_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

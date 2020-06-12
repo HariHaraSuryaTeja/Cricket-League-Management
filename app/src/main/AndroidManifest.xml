@@ -17,11 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SplashActivity"></activity>
-
         <activity android:name=".activities.TeamDetailsActivity"></activity>
         <activity android:name=".activities.AboutActivity"></activity>
         <activity android:name=".activities.MainActivity"></activity>
+        <activity android:name=".activities.MainActivity1"></activity>
         <activity android:name=".activities.AddTeamActivity"></activity>
         <activity android:name=".activities.EditTeamActivity"></activity>
         <activity android:name=".activities.ManagerListActivity"></activity>
@@ -32,7 +31,7 @@
         <activity android:name=".activities.PlayersListActivity"></activity>
         <activity android:name=".activities.AddScheduleActivity"></activity>
         <activity android:name=".activities.TeamDetails1Activity"></activity>
-
+        <activity android:name=".activities.AddPlayer1Activity"></activity>
 
     </application>
 

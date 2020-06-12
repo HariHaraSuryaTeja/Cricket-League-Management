@@ -22,14 +22,14 @@ public interface ApiService {
     Call<ResModel> addTeam(@Query("team_name") String team_name);
 
     @GET("CPL/addManager.php")
-    Call<ResModel> addManager(@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
+    Call<ResModel> addManager(@Query("name") String name, @Query("phno") String phno, @Query("email") String email, @Query("team") String team);
 
     @GET("CPL/addPlayer.php")
-    Call<ResModel> addPlayer(@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
+    Call<ResModel> addPlayer(@Query("name") String name, @Query("phno") String phno, @Query("email") String email, @Query("team") String team);
 
 
     @GET("CPL/editManager.php")
-    Call<ResModel> editManager(@Query("id") String id,@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
+    Call<ResModel> editManager(@Query("id") String id, @Query("name") String name, @Query("phno") String phno, @Query("email") String email, @Query("team") String team);
 
 
     @GET("CPL/editTeam.php")
@@ -48,13 +48,13 @@ public interface ApiService {
     Call<List<PlayerModel>> getPlayersByTeam(@Query("team") String team);
 
     @GET("CPL/editPlayer.php")
-    Call<ResModel> editPlayer(@Query("id") String id,@Query("name") String name,@Query("phno") String phno,@Query("email") String email,@Query("team") String team);
+    Call<ResModel> editPlayer(@Query("id") String id, @Query("name") String name, @Query("phno") String phno, @Query("email") String email, @Query("team") String team);
 
     @GET("CPL/deletePlayer.php")
     Call<ResModel> deletePlayer(@Query("id") String id);
 
     @GET("CPL/addSchedule.php")
-    Call<ResModel> addSchedule(@Query("team1") String team1,@Query("team2") String team2,@Query("schedule_date") String sdate);
+    Call<ResModel> addSchedule(@Query("team1") String team1, @Query("team2") String team2, @Query("schedule_date") String sdate);
 
     @GET("CPL/getManagerByTeam.php")
     Call<List<ManagerModel>> getManagerByTeam(@Query("team") String team1);
@@ -63,9 +63,9 @@ public interface ApiService {
     Call<List<ScheduleModel>> getSchedule();
 
     @GET("CPL/loginAdmin.php")
-    Call<ResModel> loginAdmin(@Query("uname") String uname,@Query("pwd") String pwd);
+    Call<ResModel> loginAdmin(@Query("uname") String uname, @Query("pwd") String pwd);
 
     @GET("CPL/loginManager.php")
-    Call<ResModel> loginManager(@Query("email") String uname,@Query("pwd") String pwd);
+    Call<ResModel> loginManager(@Query("email") String uname, @Query("pwd") String pwd);
 
 }

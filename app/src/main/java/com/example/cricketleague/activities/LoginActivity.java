@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,11 +27,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class LoginActivity extends AppCompatActivity {
     Button bt_signup,bt_signin;
     EditText et_uname,et_pwd;
     Spinner spUserType;
-    TextView tv_forget_pass;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,14 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         et_uname=(EditText)findViewById(R.id.et_uname);
         et_pwd=(EditText)findViewById(R.id.et_pwd);
         spUserType=(Spinner)findViewById(R.id.spUserType);
-        tv_forget_pass=(TextView)findViewById(R.id.tv_forget_pass);
 
-        tv_forget_pass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"In process",Toast.LENGTH_LONG).show();
-            }
-        });
         bt_signup=(Button)findViewById(R.id.bt_signup);
         bt_signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences.Editor et=pref.edit();
                         et.putString("team_access","all");
                         et.commit();
-                        Toast.makeText(LoginActivity.this, "" + rm.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Loggedin successfully.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
@@ -122,7 +114,9 @@ public class LoginActivity extends AppCompatActivity {
                         et.putString("team_access",rm.getMessage());
                         et.commit();
                         Toast.makeText(LoginActivity.this, "" + rm.getMessage(), Toast.LENGTH_SHORT).show();
-
+                        Intent intent = new Intent(LoginActivity.this, MainActivity1.class);
+                        startActivity(intent);
+                        finish();
                     }else{
                         Toast.makeText(LoginActivity.this, "Sorry Invalid Username/Password.", Toast.LENGTH_SHORT).show();
                     }

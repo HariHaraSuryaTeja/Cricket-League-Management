@@ -3,6 +3,7 @@ package com.example.cricketleague.adapters;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,10 +33,12 @@ public class Teams1Adapter extends BaseAdapter {
 
     List<TeamModel> ar;
     Context cnt;
+    SharedPreferences pref;
     public Teams1Adapter(List<TeamModel> ar, Context cnt)
     {
         this.ar=ar;
         this.cnt=cnt;
+        pref = cnt.getSharedPreferences("cpl", 0);
     }
     @Override
     public int getCount() {
@@ -58,6 +61,7 @@ public class Teams1Adapter extends BaseAdapter {
         LayoutInflater obj1 = (LayoutInflater)cnt.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View obj2=obj1.inflate(R.layout.row_teams,null);
 
+        //Toast.makeText(cnt,""+pref.getString("team_access","-"),Toast.LENGTH_SHORT).show();
 
         TextView tv_team_name=(TextView)obj2.findViewById(R.id.tv_team_name);
         tv_team_name.setText(ar.get(pos).getTeam_name());
@@ -84,7 +88,13 @@ public class Teams1Adapter extends BaseAdapter {
             }
         });
 
-
+        if(!pref.getString("team_access","-").equals("all")){
+            tv_edit.setVisibility(View.GONE);
+            tv_delete.setVisibility(View.GONE);
+        }else{
+            tv_edit.setVisibility(View.VISIBLE);
+            tv_delete.setVisibility(View.VISIBLE);
+        }
 
         CardView cv_team_name=(CardView)obj2.findViewById(R.id.cv_team_name);
         cv_team_name.setOnClickListener(new View.OnClickListener() {
