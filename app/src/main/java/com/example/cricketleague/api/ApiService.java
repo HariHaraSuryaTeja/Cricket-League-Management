@@ -62,4 +62,10 @@ public interface ApiService {
     @GET("CPL/getSchedule.php")
     Call<List<ScheduleModel>> getSchedule();
 
+    @GET("CPL/loginAdmin.php")
+    Call<ResModel> loginAdmin(@Query("uname") String uname,@Query("pwd") String pwd);
+
+    @GET("CPL/loginManager.php")
+    Call<ResModel> loginManager(@Query("email") String uname,@Query("pwd") String pwd);
+
 }

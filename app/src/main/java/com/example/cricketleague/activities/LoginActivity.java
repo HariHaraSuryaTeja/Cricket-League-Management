@@ -1,21 +1,38 @@
 package com.example.cricketleague.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cricketleague.R;
+import com.example.cricketleague.adapters.PlayersAdapter;
+import com.example.cricketleague.api.ApiService;
+import com.example.cricketleague.api.RetroClient;
+import com.example.cricketleague.models.PlayerModel;
+import com.example.cricketleague.models.ResModel;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    Button bt_signin;
-    TextView bt_signup;
+    Button bt_signup,bt_signin;
+    EditText et_uname,et_pwd;
+    Spinner spUserType;
+    TextView tv_forget_pass;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,15 +40,21 @@ public class LoginActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        bt_signup=(TextView)findViewById(R.id.bt_signup);
+        et_uname=(EditText)findViewById(R.id.et_uname);
+        et_pwd=(EditText)findViewById(R.id.et_pwd);
+        spUserType=(Spinner)findViewById(R.id.spUserType);
+        tv_forget_pass=(TextView)findViewById(R.id.tv_forget_pass);
+
+        tv_forget_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"In process",Toast.LENGTH_LONG).show();
+            }
+        });
+        bt_signup=(Button)findViewById(R.id.bt_signup);
         bt_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-             /*   Intent intent=new Intent(LoginActivity.this,RegistrationActivity.class);
-                startActivity(intent);
-
-*/
 
             }
         });
@@ -39,10 +62,75 @@ public class LoginActivity extends AppCompatActivity {
         bt_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pref = getApplicationContext().getSharedPreferences("cpl", 0);
+                if(spUserType.getSelectedItem().toString().equals("Admin")){
+                    loginAdmin();
+                }else{
+                    loginManager();
+                }
+            }
+        });
+    }
+    SharedPreferences pref;
+    ProgressDialog pd;
+    private void loginAdmin(){
+        pd = new ProgressDialog(LoginActivity.this);
+        pd.setTitle("Please wait,Data is being loaded.");
+        pd.show();
+        ApiService api = RetroClient.getApiService();
+        Call<ResModel> call = api.loginAdmin(et_uname.getText().toString(),et_pwd.getText().toString());
+        call.enqueue(new Callback<ResModel>() {
+            @Override
+            public void onResponse(Call<ResModel> call, Response<ResModel> response) {
+                pd.dismiss();
+                if (response.isSuccessful()) {
+                    ResModel rm=response.body();
+                    if(rm.getStatus().equals("true")) {
+                        SharedPreferences.Editor et=pref.edit();
+                        et.putString("team_access","all");
+                        et.commit();
+                        Toast.makeText(LoginActivity.this, "" + rm.getMessage(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Sorry Invalid Username/Password.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<ResModel> call, Throwable t) {
+                pd.dismiss();
+            }
+        });
+    }
 
-                Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent);
-                finish();
+    private void loginManager(){
+        pd = new ProgressDialog(LoginActivity.this);
+        pd.setTitle("Please wait,Data is being loaded.");
+        pd.show();
+        ApiService api = RetroClient.getApiService();
+        Call<ResModel> call = api.loginManager(et_uname.getText().toString(),et_pwd.getText().toString());
+        call.enqueue(new Callback<ResModel>() {
+            @Override
+            public void onResponse(Call<ResModel> call, Response<ResModel> response) {
+                pd.dismiss();
+                if (response.isSuccessful()) {
+                    ResModel rm=response.body();
+                    if(rm.getStatus().equals("true")) {
+                        SharedPreferences.Editor et=pref.edit();
+                        et.putString("team_access",rm.getMessage());
+                        et.commit();
+                        Toast.makeText(LoginActivity.this, "" + rm.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Sorry Invalid Username/Password.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<ResModel> call, Throwable t) {
+                pd.dismiss();
             }
         });
     }
