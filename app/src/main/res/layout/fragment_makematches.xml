@@ -10,11 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <Button
         android:id="@+id/btnAddSchedule"
         android:text="Add Schedule"
-        android:layout_weight="0"
         android:background="#fcdb00"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnReload"
+            android:text="ReLoad"
+            android:layout_weight="1"
+            android:background="#fcdb00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 </LinearLayout>

@@ -57,12 +57,10 @@ public class TeamDetailsActivity extends AppCompatActivity {
                     if(teams!=null){
                         if(teams.size()>0){
                             tv_manager.setText(teams.get(0).getName());
-
                         }else{
 
                         }
                     }
-
                 }
             }
             @Override
@@ -73,6 +71,7 @@ public class TeamDetailsActivity extends AppCompatActivity {
     }
 
     ProgressDialog pd;
+    int no_of_players=0;
     private void loadAllPlayers(){
         pd = new ProgressDialog(TeamDetailsActivity.this);
         pd.setTitle("Please wait,Data is being loaded.");
@@ -86,7 +85,12 @@ public class TeamDetailsActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     List<PlayerModel> players=response.body();
                     //Toast.makeText(ManagerListActivity.this,""+managers.size(),Toast.LENGTH_SHORT).show();
-                    list_view.setAdapter(new Players1Adapter(players,TeamDetailsActivity.this));
+                    if(players!=null) {
+                        if (players.size() > 0) {
+                            no_of_players = players.size();
+                            list_view.setAdapter(new Players1Adapter(players, TeamDetailsActivity.this));
+                        }
+                    }
                 }
             }
             @Override

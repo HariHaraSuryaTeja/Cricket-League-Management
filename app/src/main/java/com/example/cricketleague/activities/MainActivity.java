@@ -46,9 +46,16 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, TeamsFragment.getTeamsFragment());
-        transaction.commit();
+        //bottomNavigationView.setSelectedItemId(R.id.action_item3);
+        if(getIntent().getIntExtra("pos",0)==0) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_layout, TeamsFragment.getTeamsFragment());
+            transaction.commit();
+        }else{
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_layout, MakeMatchesFragment.getMakeMatchesFragment());
+            transaction.commit();
+        }
     }
 
     @Override

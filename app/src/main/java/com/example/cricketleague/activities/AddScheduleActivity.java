@@ -98,6 +98,9 @@ public class AddScheduleActivity  extends AppCompatActivity {
                     ResModel rm=response.body();
                     if(rm.getStatus().equals("true")){
                         Toast.makeText(AddScheduleActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
+                        /*Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                        intent.getIntExtra("pos",2);
+                        startActivity(intent);*/
                         finish();
                     }else{
                         Toast.makeText(AddScheduleActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();

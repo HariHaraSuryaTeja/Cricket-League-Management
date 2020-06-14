@@ -39,11 +39,19 @@ public class MakeMatchesFragment  extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.fragment_makematches, container, false);
         Button btnAddSchedule=(Button)view.findViewById(R.id.btnAddSchedule);
+        Button btnReload=(Button)view.findViewById(R.id.btnReload);
+
         list_view=(ListView)view.findViewById(R.id.list_view);
         btnAddSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),AddScheduleActivity.class));
+            }
+        });
+        btnReload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadAllschedule();
             }
         });
         loadAllschedule();
