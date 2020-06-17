@@ -5,6 +5,8 @@ import com.example.cricketleague.models.PlayerModel;
 import com.example.cricketleague.models.ResModel;
 import com.example.cricketleague.models.ScheduleModel;
 import com.example.cricketleague.models.TeamModel;
+import com.example.cricketleague.models.TeamResultModel;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -67,5 +69,8 @@ public interface ApiService {
 
     @GET("CPL/loginManager.php")
     Call<ResModel> loginManager(@Query("email") String uname, @Query("pwd") String pwd);
+
+    @GET("CPL/getMatchResults.php")
+    Call<List<TeamResultModel>> getMatchResults();
 
 }

@@ -76,7 +76,6 @@ public class ManagersAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(cnt, EditManagerActivity.class);
-                //intent.putExtra("team_name",ar.get(pos).getTeam_name());
                 intent.putExtra("id",ar.get(pos).getId());
                 intent.putExtra("name",ar.get(pos).getName());
                 intent.putExtra("phno",ar.get(pos).getPhno());
@@ -93,7 +92,6 @@ public class ManagersAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(cnt, TeamDetailsActivity.class);
-                //intent.putExtra("team_name",ar.get(pos).getTeam_name());
                 cnt.startActivity(intent);
             }
         });

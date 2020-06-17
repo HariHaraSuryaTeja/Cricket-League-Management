@@ -68,7 +68,6 @@ public class EditPlayerActivity  extends AppCompatActivity {
                     ResModel rm=response.body();
                     if(rm.getStatus().equals("true")){
                         Toast.makeText(EditPlayerActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(getApplicationContext(),PlayersListActivity.class));
                         Intent intent=new Intent(getApplicationContext(),TeamDetails1Activity.class);
                         intent.putExtra("team_name",getIntent().getStringExtra("team"));
                         startActivity(intent);

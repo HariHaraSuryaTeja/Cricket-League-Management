@@ -68,7 +68,6 @@ public class ManagerListActivity extends AppCompatActivity {
                 pd.dismiss();
                 if (response.isSuccessful()) {
                     List<ManagerModel> managers=response.body();
-                    //Toast.makeText(ManagerListActivity.this,""+managers.size(),Toast.LENGTH_SHORT).show();
                     list_view.setAdapter(new ManagersAdapter(managers,ManagerListActivity.this));
                 }
             }

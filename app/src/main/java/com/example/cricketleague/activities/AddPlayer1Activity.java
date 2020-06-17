@@ -49,7 +49,6 @@ public class AddPlayer1Activity  extends AppCompatActivity {
         });
         tvTeam =(TextView) findViewById(R.id.tvTeam);
         tvTeam.setText(getIntent().getStringExtra("team"));
-        //loadAllTeams();
     }
 
     ProgressDialog pd;

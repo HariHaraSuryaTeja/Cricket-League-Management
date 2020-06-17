@@ -84,7 +84,6 @@ public class TeamDetailsActivity extends AppCompatActivity {
                 pd.dismiss();
                 if (response.isSuccessful()) {
                     List<PlayerModel> players=response.body();
-                    //Toast.makeText(ManagerListActivity.this,""+managers.size(),Toast.LENGTH_SHORT).show();
                     if(players!=null) {
                         if (players.size() > 0) {
                             no_of_players = players.size();

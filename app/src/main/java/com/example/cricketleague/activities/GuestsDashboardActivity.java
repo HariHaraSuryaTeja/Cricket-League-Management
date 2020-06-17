@@ -9,17 +9,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.example.cricketleague.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity1 extends AppCompatActivity {
+public class GuestsDashboardActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main1);
+        setContentView(R.layout.activity_guestdashboard);
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
 
@@ -31,29 +30,25 @@ public class MainActivity1 extends AppCompatActivity {
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
                             case R.id.action_item1:
-                                selectedFragment = TeamsFragment.getTeamsFragment();
+                                selectedFragment = TeamResultFragment.getTeamsFragment();
                                 break;
-                            case R.id.action_item2:
-                                selectedFragment = AddPlayerAndManagerFragment.getTeamsFragment();
-                                break;
-                            case R.id.action_item3:
-                                selectedFragment = MakeMatchesFragment.getMakeMatchesFragment();
-                                break;
-                        }
+         }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.frame_layout, selectedFragment);
                         transaction.commit();
                         return true;
                     }
                 });
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, TeamsFragment.getTeamsFragment());
-        transaction.commit();
+
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_layout, TeamResultFragment.getTeamsFragment());
+            transaction.commit();
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu1, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
     @Override
@@ -64,27 +59,10 @@ public class MainActivity1 extends AppCompatActivity {
                 Intent contact = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(contact);
                 return true;
-            case R.id.item_add_manager:
-                Intent managers = new Intent(getApplicationContext(), ManagerListActivity.class);
-                startActivity(managers);
-                return true;
 
-            case R.id.item_add_player:
-                Intent players = new Intent(getApplicationContext(), PlayersListActivity.class);
-                startActivity(players);
-                return true;
-            case R.id.item_add_schedule:
-                Intent schedule = new Intent(getApplicationContext(), AddScheduleActivity.class);
-                startActivity(schedule);
-                return true;
-
-            case R.id.item_logout:
-                Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(myIntent);
-                finish();
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 }
+

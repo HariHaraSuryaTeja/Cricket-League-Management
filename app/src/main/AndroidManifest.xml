@@ -32,6 +32,8 @@
         <activity android:name=".activities.AddScheduleActivity"></activity>
         <activity android:name=".activities.TeamDetails1Activity"></activity>
         <activity android:name=".activities.AddPlayer1Activity"></activity>
+        <activity android:name=".activities.GuestsDashboardActivity"></activity>
+        <activity android:name=".activities.TeamPlayersScoreDetailsActivity"></activity>
 
     </application>
 

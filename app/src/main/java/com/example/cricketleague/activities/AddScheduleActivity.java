@@ -2,7 +2,6 @@ package com.example.cricketleague.activities;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,7 +48,6 @@ public class AddScheduleActivity  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setDate();
-                //Toast.makeText(AddScheduleActivity.this,"Date",Toast.LENGTH_SHORT).show();
             }
         });
         btnAddSchedule =(Button) findViewById(R.id.btnAddSchedule);
@@ -98,9 +96,7 @@ public class AddScheduleActivity  extends AppCompatActivity {
                     ResModel rm=response.body();
                     if(rm.getStatus().equals("true")){
                         Toast.makeText(AddScheduleActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();
-                        /*Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                        intent.getIntExtra("pos",2);
-                        startActivity(intent);*/
+
                         finish();
                     }else{
                         Toast.makeText(AddScheduleActivity.this,rm.getMessage(),Toast.LENGTH_SHORT).show();

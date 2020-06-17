@@ -57,8 +57,12 @@ public class LoginActivity extends AppCompatActivity {
                 pref = getApplicationContext().getSharedPreferences("cpl", 0);
                 if(spUserType.getSelectedItem().toString().equals("Admin")){
                     loginAdmin();
-                }else{
+                }else if(spUserType.getSelectedItem().toString().equals("Manager")){
                     loginManager();
+                }else{
+                    Intent intent = new Intent(LoginActivity.this, GuestsDashboardActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });

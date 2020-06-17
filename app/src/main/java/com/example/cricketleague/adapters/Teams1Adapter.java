@@ -61,7 +61,6 @@ public class Teams1Adapter extends BaseAdapter {
         LayoutInflater obj1 = (LayoutInflater)cnt.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View obj2=obj1.inflate(R.layout.row_teams,null);
 
-        //Toast.makeText(cnt,""+pref.getString("team_access","-"),Toast.LENGTH_SHORT).show();
 
         TextView tv_team_name=(TextView)obj2.findViewById(R.id.tv_team_name);
         tv_team_name.setText(ar.get(pos).getTeam_name());

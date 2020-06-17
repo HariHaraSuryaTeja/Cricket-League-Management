@@ -71,7 +71,6 @@ public class MakeMatchesFragment  extends Fragment {
                 pd.dismiss();
                 if (response.isSuccessful()) {
                     List<ScheduleModel> schedule=response.body();
-                    //Toast.makeText(ManagerListActivity.this,""+managers.size(),Toast.LENGTH_SHORT).show();
                     list_view.setAdapter(new ScheduleAdapter(schedule,getActivity()));
                 }
             }

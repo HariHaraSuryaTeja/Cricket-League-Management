@@ -73,8 +73,7 @@ public class PlayersListActivity extends AppCompatActivity {
                 pd.dismiss();
                 if (response.isSuccessful()) {
                     List<PlayerModel> players=response.body();
-                    //Toast.makeText(ManagerListActivity.this,""+managers.size(),Toast.LENGTH_SHORT).show();
-                    //list_view.setAdapter(new PlayersAdapter(players,PlayersListActivity.this));
+
                 }
             }
             @Override
