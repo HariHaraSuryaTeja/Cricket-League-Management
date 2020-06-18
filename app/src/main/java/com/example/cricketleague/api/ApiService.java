@@ -70,6 +70,9 @@ public interface ApiService {
     @GET("CPL/loginManager.php")
     Call<ResModel> loginManager(@Query("email") String uname, @Query("pwd") String pwd);
 
+    @GET("CPL/addTeamResultScore.php")
+    Call<ResModel> addTeamResultScore(@Query("id") String id, @Query("team1_score") String team1_score, @Query("team2_score") String team2_score, @Query("result") String result);
+
     @GET("CPL/getMatchResults.php")
     Call<List<TeamResultModel>> getMatchResults();
 

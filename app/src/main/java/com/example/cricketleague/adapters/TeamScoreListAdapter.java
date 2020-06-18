@@ -1,6 +1,5 @@
 package com.example.cricketleague.adapters;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -8,33 +7,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
 import com.example.cricketleague.R;
-import com.example.cricketleague.activities.EditTeamActivity;
-import com.example.cricketleague.activities.TeamDetailsActivity;
+import com.example.cricketleague.activities.AddTeamScoreActivity;
 import com.example.cricketleague.activities.TeamPlayersScoreDetailsActivity;
-import com.example.cricketleague.api.ApiService;
-import com.example.cricketleague.api.RetroClient;
-import com.example.cricketleague.models.ResModel;
-import com.example.cricketleague.models.TeamModel;
 import com.example.cricketleague.models.TeamResultModel;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-
-
-public class TeamResultAdapter extends BaseAdapter {
+public class TeamScoreListAdapter extends BaseAdapter {
 
     List<TeamResultModel> ar;
     Context cnt;
-    public TeamResultAdapter(List<TeamResultModel> ar, Context cnt)
+    public TeamScoreListAdapter(List<TeamResultModel> ar, Context cnt)
     {
         this.ar=ar;
         this.cnt=cnt;
@@ -80,7 +67,8 @@ public class TeamResultAdapter extends BaseAdapter {
         cv_team_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent=new Intent(cnt, TeamPlayersScoreDetailsActivity.class);
+                Intent intent=new Intent(cnt, AddTeamScoreActivity.class);
+                intent.putExtra("id",ar.get(pos).getId());
                 intent.putExtra("team1",ar.get(pos).getTeam1());
                 intent.putExtra("team1_score",ar.get(pos).getTeam1_score());
                 intent.putExtra("team2",ar.get(pos).getTeam2());

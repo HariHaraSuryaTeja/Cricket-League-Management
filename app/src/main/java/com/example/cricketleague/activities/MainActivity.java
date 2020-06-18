@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
-        //bottomNavigationView.setSelectedItemId(R.id.action_item3);
         if(getIntent().getIntExtra("pos",0)==0) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_layout, TeamsFragment.getTeamsFragment());
@@ -60,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
@@ -84,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.item_add_schedule:
                 Intent schedule = new Intent(getApplicationContext(), AddScheduleActivity.class);
                 startActivity(schedule);
+                return true;
+
+            case R.id.item_add_team_score:
+                Intent team_score = new Intent(getApplicationContext(), AddTeamScoreListActivity.class);
+                startActivity(team_score);
                 return true;
 
             case R.id.item_logout:

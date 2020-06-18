@@ -32,7 +32,7 @@ public class GuestsDashboardActivity extends AppCompatActivity {
                             case R.id.action_item1:
                                 selectedFragment = TeamResultFragment.getTeamsFragment();
                                 break;
-         }
+                        }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.frame_layout, selectedFragment);
                         transaction.commit();
@@ -59,7 +59,6 @@ public class GuestsDashboardActivity extends AppCompatActivity {
                 Intent contact = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(contact);
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }

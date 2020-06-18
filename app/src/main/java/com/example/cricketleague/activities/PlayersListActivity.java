@@ -73,7 +73,6 @@ public class PlayersListActivity extends AppCompatActivity {
                 pd.dismiss();
                 if (response.isSuccessful()) {
                     List<PlayerModel> players=response.body();
-
                 }
             }
             @Override
