@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -32,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
     Button bt_signup,bt_signin;
     EditText et_uname,et_pwd;
     Spinner spUserType;
+    TextView tv_guest;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,15 @@ public class LoginActivity extends AppCompatActivity {
         et_uname=(EditText)findViewById(R.id.et_uname);
         et_pwd=(EditText)findViewById(R.id.et_pwd);
         spUserType=(Spinner)findViewById(R.id.spUserType);
-
+        tv_guest=(TextView)findViewById(R.id.tv_guest);
+        tv_guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, GuestsDashboardActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         bt_signup=(Button)findViewById(R.id.bt_signup);
         bt_signup.setOnClickListener(new View.OnClickListener() {
             @Override

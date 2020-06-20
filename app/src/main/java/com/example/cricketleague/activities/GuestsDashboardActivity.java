@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,12 @@ public class GuestsDashboardActivity extends AppCompatActivity {
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
                             case R.id.action_item1:
+                                selectedFragment = ScoreFragment.getScoreFragment();
+                                break;
+                            case R.id.action_item2:
+                                selectedFragment = HelpFragment.getFragment();
+                                break;
+                            case R.id.action_item3:
                                 selectedFragment = TeamResultFragment.getTeamsFragment();
                                 break;
                         }
@@ -43,21 +50,22 @@ public class GuestsDashboardActivity extends AppCompatActivity {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_layout, TeamResultFragment.getTeamsFragment());
             transaction.commit();
-
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.guest_menu, menu);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id){
-            case R.id.item_about:
-                Intent contact = new Intent(getApplicationContext(), AboutActivity.class);
-                startActivity(contact);
+
+
+            case R.id.item_login:
+                Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(myIntent);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

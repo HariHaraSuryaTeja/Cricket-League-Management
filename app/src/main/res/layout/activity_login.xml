@@ -13,7 +13,7 @@
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_20sdp"
         card_view:cardCornerRadius="6dp"
@@ -33,6 +33,17 @@
                 android:layout_width="@dimen/_150sdp"
                 android:layout_height="250dp" />
 
+            <TextView
+                android:id="@+id/tv_guest"
+                android:text="Guest User?"
+                android:textStyle="bold"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="20dp"
+                android:textColor="#FDE71C"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/tv_home"
@@ -127,7 +138,7 @@
                 android:textSize="@dimen/_13sdp"
                 android:textColor="#000"
                 android:textAllCaps="false"
-                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
@@ -157,7 +168,7 @@
                 android:padding="@dimen/_11sdp"
                 android:textSize="@dimen/_13sdp"
                 android:visibility="gone"
-                android:layout_marginBottom="@dimen/_50sdp"
+
                 android:layout_marginTop="@dimen/_70sdp"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_10sdp"
@@ -166,6 +177,8 @@
                 android:textAllCaps="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

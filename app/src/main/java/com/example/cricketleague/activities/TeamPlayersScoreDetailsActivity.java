@@ -15,12 +15,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class TeamPlayersScoreDetailsActivity  extends AppCompatActivity {
     Button btn_team1,btn_team2;
+    public  String t1="",t2="",id="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_players);
         TextView team1=(TextView)findViewById(R.id.team1);
         team1.setText(getIntent().getStringExtra("team1"));
+        t1 = getIntent().getStringExtra("team1");
+        t2 = getIntent().getStringExtra("team2");
+        id = getIntent().getStringExtra("id");
 
         TextView team1_score=(TextView)findViewById(R.id.team1_score);
         team1_score.setText(getIntent().getStringExtra("team1_score"));
@@ -34,7 +38,9 @@ public class TeamPlayersScoreDetailsActivity  extends AppCompatActivity {
         TextView tv_result=(TextView)findViewById(R.id.tv_result);
         tv_result.setText(getIntent().getStringExtra("result"));
         btn_team1=(Button)findViewById(R.id.btn_team1);
+        btn_team1.setText(getIntent().getStringExtra("team1"));
         btn_team2=(Button)findViewById(R.id.btn_team2);
+        btn_team2.setText(getIntent().getStringExtra("team2"));
         btn_team1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

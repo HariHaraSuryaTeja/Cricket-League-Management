@@ -36,8 +36,7 @@
         <activity android:name=".activities.TeamPlayersScoreDetailsActivity"></activity>
         <activity android:name=".activities.AddTeamScoreListActivity"></activity>
         <activity android:name=".activities.AddTeamScoreActivity"></activity>
-
-
+        <activity android:name=".activities.AddPlayersScoreActivity"></activity>
 
     </application>
 

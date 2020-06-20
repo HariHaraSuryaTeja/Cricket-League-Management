@@ -25,7 +25,7 @@ import retrofit2.Response;
 public class AddTeamScoreActivity  extends AppCompatActivity {
     TextView tv_team1_score,tv_team2_score;
     EditText etTeam1Score,etTeam2Score,etResult;
-    Button btnAddResult;
+    Button btnAddResult,btnTeam1,btnTeam2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +40,41 @@ public class AddTeamScoreActivity  extends AppCompatActivity {
         tv_team2_score.setText(getIntent().getStringExtra("team2")+" Score");
 
         etTeam1Score=(EditText)findViewById(R.id.etTeam1Score);
+        etTeam1Score.setText(getIntent().getStringExtra("team1_score"));
+
         etTeam2Score=(EditText)findViewById(R.id.etTeam2Score);
+        etTeam2Score.setText(getIntent().getStringExtra("team2_score"));
         etResult=(EditText)findViewById(R.id.etResult);
+        etResult.setText(getIntent().getStringExtra("result"));
+
         btnAddResult=(Button)findViewById(R.id.btnAddResult);
         btnAddResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addScore();
+            }
+        });
+
+        btnTeam1=(Button)findViewById(R.id.btnTeam1);
+        btnTeam1.setText("Add "+getIntent().getStringExtra("team1")+" Players Score");
+        btnTeam1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),AddPlayersScoreActivity.class);
+                intent.putExtra("team_name",getIntent().getStringExtra("team1"));
+                intent.putExtra("sid",getIntent().getStringExtra("id"));
+                startActivity(intent);
+            }
+        });
+        btnTeam2=(Button)findViewById(R.id.btnTeam2);
+        btnTeam2.setText("Add "+getIntent().getStringExtra("team2")+" Players Score");
+        btnTeam2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),AddPlayersScoreActivity.class);
+                intent.putExtra("team_name",getIntent().getStringExtra("team2"));
+                intent.putExtra("sid",getIntent().getStringExtra("id"));
+                startActivity(intent);
             }
         });
     }
@@ -65,7 +93,7 @@ public class AddTeamScoreActivity  extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     ResModel rm=response.body();
                     if(rm.getStatus().equals("true")){
-                        Toast.makeText(AddTeamScoreActivity.this,"score is added successfully",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddTeamScoreActivity.this,"Score is updated successfully",Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         finish();
                     }else{

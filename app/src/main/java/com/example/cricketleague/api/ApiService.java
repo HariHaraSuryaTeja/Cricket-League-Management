@@ -2,6 +2,7 @@ package com.example.cricketleague.api;
 
 import com.example.cricketleague.models.ManagerModel;
 import com.example.cricketleague.models.PlayerModel;
+import com.example.cricketleague.models.PlayerScoreModel;
 import com.example.cricketleague.models.ResModel;
 import com.example.cricketleague.models.ScheduleModel;
 import com.example.cricketleague.models.TeamModel;
@@ -75,5 +76,11 @@ public interface ApiService {
 
     @GET("CPL/getMatchResults.php")
     Call<List<TeamResultModel>> getMatchResults();
+
+    @GET("CPL/addPlayerScore.php")
+    Call<ResModel> addPlayerScore(@Query("sid") String sid, @Query("player_name") String player_name, @Query("score") String score, @Query("team_name") String team_name);
+
+    @GET("CPL/getPlayersScore.php")
+    Call<List<PlayerScoreModel>> getPlayersScore(@Query("sid") String sid, @Query("team_name") String team_name);
 
 }

@@ -57,6 +57,8 @@ public class AddScheduleActivity  extends AppCompatActivity {
             public void onClick(View v) {
                 if(spTeamName1.getSelectedItem().toString().equals(spTeamName2.getSelectedItem().toString())){
                     Toast.makeText(AddScheduleActivity.this,"Both teams are same.",Toast.LENGTH_SHORT).show();
+                }else if(etSDate.getText().toString().isEmpty()){
+                    Toast.makeText(AddScheduleActivity.this,"Please select schedule date.",Toast.LENGTH_SHORT).show();
                 }else{
                     addSchedule();
                 }
