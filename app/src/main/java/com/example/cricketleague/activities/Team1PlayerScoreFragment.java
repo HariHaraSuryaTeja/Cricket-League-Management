@@ -39,7 +39,6 @@ public class Team1PlayerScoreFragment extends Fragment {
 
         String team=((TeamPlayersScoreDetailsActivity) getActivity()).t1;
         String id=((TeamPlayersScoreDetailsActivity) getActivity()).id;
-
         getPlayersScore(team,id);
         return view;
     }

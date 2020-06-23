@@ -2,6 +2,7 @@ package com.example.cricketleague.activities;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,15 +45,21 @@ public class TeamPlayersScoreDetailsActivity  extends AppCompatActivity {
         btn_team1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_team1.setBackgroundColor(Color.parseColor("#fcdb00"));
+                btn_team2.setBackgroundColor(Color.parseColor("#d5d5d5"));
                 loadFragment(new Team1PlayerScoreFragment());
             }
         });
         btn_team2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_team2.setBackgroundColor(Color.parseColor("#fcdb00"));
+                btn_team1.setBackgroundColor(Color.parseColor("#d5d5d5"));
                 loadFragment(new Team2PlayerScoreFragment());
             }
         });
+        btn_team1.setBackgroundColor(Color.parseColor("#fcdb00"));
+        btn_team2.setBackgroundColor(Color.parseColor("#d5d5d5"));
         loadFragment(new Team1PlayerScoreFragment());
     }
     private void loadFragment(Fragment fragment) {

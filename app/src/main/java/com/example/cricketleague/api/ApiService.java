@@ -56,8 +56,14 @@ public interface ApiService {
     @GET("CPL/deletePlayer.php")
     Call<ResModel> deletePlayer(@Query("id") String id);
 
+    @GET("CPL/deleteSchedule.php")
+    Call<ResModel> deleteSchedule(@Query("id") String id);
+
     @GET("CPL/addSchedule.php")
     Call<ResModel> addSchedule(@Query("team1") String team1, @Query("team2") String team2, @Query("schedule_date") String sdate);
+
+    @GET("CPL/editSchedule.php")
+    Call<ResModel> editSchedule(@Query("team1") String team1, @Query("team2") String team2, @Query("schedule_date") String sdate,@Query("id") String id);
 
     @GET("CPL/getManagerByTeam.php")
     Call<List<ManagerModel>> getManagerByTeam(@Query("team") String team1);
@@ -82,5 +88,7 @@ public interface ApiService {
 
     @GET("CPL/getPlayersScore.php")
     Call<List<PlayerScoreModel>> getPlayersScore(@Query("sid") String sid, @Query("team_name") String team_name);
+
+
 
 }

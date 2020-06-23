@@ -1,57 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-<LinearLayout
-
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#ffffff"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:textColor="#000000"
-        android:textSize="24dp"
-        android:layout_margin="20dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:text="About This Application"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <ImageView
-        android:id="@+id/iv"
-        android:src="@drawable/logoo"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:padding="10dp"
-        android:gravity="start"
-        android:textSize="18dp"
-        android:text="Cricket League Management is an application
-built as a Internship project for Cegep de la Gaspesie et des lles. A mobile
-applicationis needed to easily manage the teams and players that participate in the league, to create the
-schedule of matches, to enter the result of the matches and to display various standings and statistics."
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:padding="10dp"
-        android:gravity="start"
-        android:textSize="18dp"
-        android:text="This application is developed by 5 students of Cegep as a part of Internship. We are Hari, Akhil, vedanth, Shiva Palanchi and Kawaldeep under the
-guidence of Richard, Pargol, Roshan, Reza and Soumaya."
-        />
-
-</LinearLayout>
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:background="#ffffff" android:layout_height="match_parent">
+        <TextView android:textColor="#000000" android:textSize="24dp" android:layout_margin="20dp" android:textStyle="bold" android:layout_gravity="center" android:text="About This Application" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <ImageView android:id="@+id/iv" android:src="@drawable/logoo" android:layout_gravity="center" android:layout_margin="10dp" android:layout_width="150dp" android:layout_height="150dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#000000" android:padding="10dp" android:gravity="start" android:textSize="18dp" android:text="Cricket League Management is an application built as a Internship project for Cegep de la Gaspesie et des lles. A mobile applicationis needed to easily manage the teams and players that participate in the league, to create the schedule of matches, to enter the result of the matches and to display various standings and statistics."/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#000000" android:padding="10dp" android:gravity="start" android:textSize="18dp" android:text="This application is developed by 5 students of Cegep as a part of Internship. We are Hari, Akhil, vedanth, Shiva Palanchi and Kawaldeep under the guidence of Richard, Pargol, Roshan, Reza and Soumaya."/>
+    </LinearLayout>
 </ScrollView>

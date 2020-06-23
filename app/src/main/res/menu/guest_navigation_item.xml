@@ -15,10 +15,6 @@
     <item
         android:id="@+id/action_item2"
         android:icon="@drawable/ic_help"
-        android:title="About" />
-    <item
-        android:id="@+id/action_item5"
-        android:visible="false"
-        android:icon="@drawable/ic_add_matches"
-        android:title="Seasons"/>
+        android:title="Help"/>
+
 </menu>

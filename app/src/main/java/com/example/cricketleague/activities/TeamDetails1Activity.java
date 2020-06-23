@@ -65,7 +65,7 @@ public class TeamDetails1Activity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }else{
-                    Toast.makeText(TeamDetails1Activity.this,"Team is fulled.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TeamDetails1Activity.this,"Team is full.",Toast.LENGTH_SHORT).show();
                 }
 
             }

@@ -39,6 +39,10 @@ public class GuestsDashboardActivity extends AppCompatActivity {
                             case R.id.action_item3:
                                 selectedFragment = TeamResultFragment.getTeamsFragment();
                                 break;
+                            case R.id.action_item4:
+                                selectedFragment = NewsFragment.getFragment();
+                                break;
+
                         }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.frame_layout, selectedFragment);
@@ -60,8 +64,6 @@ public class GuestsDashboardActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id){
-
-
             case R.id.item_login:
                 Intent myIntent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(myIntent);

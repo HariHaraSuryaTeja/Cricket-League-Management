@@ -97,7 +97,7 @@ public class AddTeamScoreActivity  extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         finish();
                     }else{
-                        Toast.makeText(AddTeamScoreActivity.this,"score is already added",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddTeamScoreActivity.this,"Team is already added",Toast.LENGTH_SHORT).show();
                     }
                 }
             }

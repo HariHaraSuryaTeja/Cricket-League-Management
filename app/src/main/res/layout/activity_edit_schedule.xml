@@ -6,15 +6,10 @@
     android:padding="@dimen/_8sdp"
     android:layout_height="match_parent">
     <TextView
+        android:id="@+id/tv_team1"
         android:padding="@dimen/_5sdp"
         android:layout_width="wrap_content"
         android:text="Team Name1"
-        android:layout_height="wrap_content"/>
-    <Spinner
-        android:layout_width="match_parent"
-        android:id="@+id/spTeamName1"
-        android:background="@drawable/et_box"
-        android:padding="@dimen/_5sdp"
         android:layout_height="wrap_content"/>
     <TextView
         android:padding="@dimen/_5sdp"
@@ -22,17 +17,11 @@
         android:text="Vs"
         android:layout_height="wrap_content"/>
     <TextView
+        android:id="@+id/tv_team2"
         android:padding="@dimen/_5sdp"
         android:layout_width="wrap_content"
         android:text="Team Name2"
         android:layout_height="wrap_content"/>
-    <Spinner
-        android:layout_width="match_parent"
-        android:id="@+id/spTeamName2"
-        android:background="@drawable/et_box"
-        android:padding="@dimen/_5sdp"
-        android:layout_height="wrap_content"/>
-
     <EditText
         android:layout_width="match_parent"
         android:id="@+id/etSDate"
@@ -46,9 +35,9 @@
         android:background="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_gravity="right"
-        android:id="@+id/btnAddSchedule"
+        android:id="@+id/btnEditSchedule"
         android:layout_margin="@dimen/_8sdp"
-        android:text="Add Schedule"
+        android:text="Edit Schedule"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>
