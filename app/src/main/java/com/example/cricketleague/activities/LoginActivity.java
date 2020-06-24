@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences.Editor et=pref.edit();
                         et.putString("team_access","all");
                         et.commit();
-                        Toast.makeText(LoginActivity.this, "Loggedin successfully.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login successful.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();

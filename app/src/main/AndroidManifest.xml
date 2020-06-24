@@ -2,44 +2,45 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cricketleague">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logoo"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.LoginActivity">
+        <activity android:name=".activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TeamDetailsActivity"></activity>
-        <activity android:name=".activities.AboutActivity"></activity>
-        <activity android:name=".activities.MainActivity"></activity>
-        <activity android:name=".activities.MainActivity1"></activity>
-        <activity android:name=".activities.AddTeamActivity"></activity>
-        <activity android:name=".activities.EditTeamActivity"></activity>
-        <activity android:name=".activities.ManagerListActivity"></activity>
-        <activity android:name=".activities.AddManagerActivity"></activity>
-        <activity android:name=".activities.EditManagerActivity"></activity>
-        <activity android:name=".activities.AddPlayerActivity"></activity>
-        <activity android:name=".activities.EditPlayerActivity"></activity>
-        <activity android:name=".activities.PlayersListActivity"></activity>
-        <activity android:name=".activities.AddScheduleActivity"></activity>
-        <activity android:name=".activities.TeamDetails1Activity"></activity>
-        <activity android:name=".activities.AddPlayer1Activity"></activity>
-        <activity android:name=".activities.GuestsDashboardActivity"></activity>
-        <activity android:name=".activities.TeamPlayersScoreDetailsActivity"></activity>
-        <activity android:name=".activities.AddTeamScoreListActivity"></activity>
-        <activity android:name=".activities.AddTeamScoreActivity"></activity>
-        <activity android:name=".activities.AddPlayersScoreActivity"></activity>
-        <activity android:name=".activities.EditScheduleActivity"></activity>
-
-
+        <activity android:name=".activities.LoginActivity"/>
+        <activity android:name=".activities.TeamDetailsActivity" />
+        <activity android:name=".activities.AboutActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.MainActivity1" />
+        <activity android:name=".activities.AddTeamActivity" />
+        <activity android:name=".activities.EditTeamActivity" />
+        <activity android:name=".activities.ManagerListActivity" />
+        <activity android:name=".activities.AddManagerActivity" />
+        <activity android:name=".activities.EditManagerActivity" />
+        <activity android:name=".activities.AddPlayerActivity" />
+        <activity android:name=".activities.EditPlayerActivity" />
+        <activity android:name=".activities.PlayersListActivity" />
+        <activity android:name=".activities.AddScheduleActivity" />
+        <activity android:name=".activities.TeamDetails1Activity" />
+        <activity android:name=".activities.AddPlayer1Activity" />
+        <activity android:name=".activities.GuestsDashboardActivity" />
+        <activity android:name=".activities.TeamPlayersScoreDetailsActivity" />
+        <activity android:name=".activities.AddTeamScoreListActivity" />
+        <activity android:name=".activities.AddTeamScoreActivity" />
+        <activity android:name=".activities.AddPlayersScoreActivity" />
+        <activity android:name=".activities.EditScheduleActivity" />
     </application>
 
 </manifest>

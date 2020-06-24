@@ -5,8 +5,6 @@
         android:title="About"/>
     <item  android:id="@+id/item_add_manager"
         android:title="Add Manager"/>
-    <item  android:id="@+id/item_add_player"
-        android:title="Add Player"/>
     <item  android:id="@+id/item_add_schedule"
         android:title="Add Schedule"/>
     <item  android:id="@+id/item_add_team_score"

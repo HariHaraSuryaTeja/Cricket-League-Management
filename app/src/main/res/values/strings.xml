@@ -3,6 +3,5 @@
     <string-array name="user_types">
         <item>Admin</item>
         <item>Manager</item>
-        <item>Guest</item>
     </string-array>
 </resources>
