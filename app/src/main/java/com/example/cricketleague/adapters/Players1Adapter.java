@@ -87,14 +87,6 @@ public class Players1Adapter extends BaseAdapter {
 
 
         CardView cv_team_name=(CardView)obj2.findViewById(R.id.cv_team_name);
-        cv_team_name.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(cnt, TeamDetailsActivity.class);
-                cnt.startActivity(intent);
-            }
-        });
-
         return obj2;
     }
 

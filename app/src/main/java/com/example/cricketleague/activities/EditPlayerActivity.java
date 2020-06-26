@@ -50,7 +50,7 @@ public class EditPlayerActivity  extends AppCompatActivity {
                 editPlayer();
             }
         });
-        loadAllTeams();
+         loadAllTeams();
     }
 
     ProgressDialog pd;

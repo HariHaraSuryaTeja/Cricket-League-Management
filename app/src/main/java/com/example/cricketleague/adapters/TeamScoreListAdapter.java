@@ -63,6 +63,9 @@ public class TeamScoreListAdapter extends BaseAdapter {
         TextView tv_result=(TextView)obj2.findViewById(R.id.tv_result);
         tv_result.setText(ar.get(pos).getResult());
 
+        TextView date=(TextView)obj2.findViewById(R.id.tv_matchdate);
+        date.setText("Date : "+ar.get(pos).getSchedule_date());
+
         CardView cv_team_name=(CardView)obj2.findViewById(R.id.cv_team_name);
         cv_team_name.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -42,7 +42,24 @@ public class AddPlayerActivity  extends AppCompatActivity {
         btnAddPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addPlayer();
+                if(etPlayerName.getText().toString().equals(""))
+                {
+                    Toast.makeText(AddPlayerActivity.this,"Enter Player Name",Toast.LENGTH_SHORT).show();
+
+                }
+                else if(etPhno.getText().toString().equals(""))
+                {
+                    Toast.makeText(AddPlayerActivity.this,"Enter Phone",Toast.LENGTH_SHORT).show();
+
+                }
+                else if(etEmailID.getText().toString().equals(""))
+                {
+                    Toast.makeText(AddPlayerActivity.this,"Enter Email",Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    addPlayer();
+                }
             }
         });
         loadAllTeams();

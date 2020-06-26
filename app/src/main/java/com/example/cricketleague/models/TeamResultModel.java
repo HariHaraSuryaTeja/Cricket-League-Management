@@ -24,6 +24,10 @@ public class TeamResultModel {
     @SerializedName("sid")
     private String sid;
 
+    @SerializedName("schedule_date")
+    private String schedule_date;
+
+
     public String getId() {
         return id;
     }
@@ -78,5 +82,13 @@ public class TeamResultModel {
 
     public void setSid(String sid) {
         this.sid = sid;
+    }
+
+    public String getSchedule_date() {
+        return schedule_date;
+    }
+
+    public void setSchedule_date(String schedule_date) {
+        this.schedule_date = schedule_date;
     }
 }

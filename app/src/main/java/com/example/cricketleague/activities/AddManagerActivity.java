@@ -33,7 +33,7 @@ public class AddManagerActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_manager);
+        setContentView(R.layout.manager);
         getSupportActionBar().setTitle("Add Manager");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

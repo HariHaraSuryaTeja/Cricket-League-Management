@@ -2,6 +2,7 @@ package com.example.cricketleague.adapters;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 
 import com.example.cricketleague.R;
@@ -70,7 +72,7 @@ public class Teams1Adapter extends BaseAdapter {
         tv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteTeam(ar.get(pos).getId(),pos);
+                confirmDelete(ar.get(pos).getId(),pos);
 
             }
         });
@@ -131,6 +133,26 @@ public class Teams1Adapter extends BaseAdapter {
                 pd.dismiss();
             }
         });
+    }
+
+    AlertDialog.Builder builder;
+    private void confirmDelete(final String id1,final int pos1){
+        builder = new AlertDialog.Builder(cnt);
+        builder.setMessage("Do you want to delete Team?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        deleteTeam(id1,pos1);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.setTitle("CPL");
+        alert.show();
     }
 
 }
